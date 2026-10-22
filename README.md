@@ -1,105 +1,94 @@
-# NetWatch — Network Monitoring and Troubleshooting System
+# 🌐 NetWatch — Network Monitoring and Troubleshooting System
 
-NetWatch is a Python and Streamlit dashboard for checking TCP service connectivity, measuring TCP connection-establishment time, reviewing test history, and exporting results.
+NetWatch is a Python-based web application that checks TCP service connectivity across multiple hosts. It provides connection-time measurements, monitoring history, network analytics, and downloadable CSV reports through an interactive Streamlit dashboard.
 
-## Features
+## 🚀 Live Demo
 
-- Check TCP connectivity for up to 10 hostnames per run
-- Configure the destination TCP port and timeout
-- Check multiple hosts concurrently
-- Display Online / Failed status and connection details
-- Show summary metrics and host-wise success rates
-- Visualize connection times and Online vs Failed counts
-- Keep session-based monitoring history
-- Download results as a CSV report
-- Optional auto-refresh at a selected interval
-- Include a troubleshooting guide
+**Try NetWatch:** https://gb8xdtjmijsmbkrklydcyd.streamlit.app
 
-## Tech stack
+## ✨ Features
 
-- Python
-- Streamlit
-- Pandas
-- Python `socket` and `concurrent.futures`
+* **Multi-Host Connectivity Checks:** Test multiple hostnames using a selected TCP port.
+* **Connection-Time Measurement:** Measure the time taken to establish a TCP connection.
+* **Network Overview:** View total checks, successful connections, failed connections, and success rate.
+* **Host Summary:** Compare connectivity results for individual hosts.
+* **Interactive Charts:** Visualize connection-time measurements and connection statuses.
+* **Monitoring History:** Review previous test results.
+* **CSV Report Export:** Download monitoring results for further analysis.
+* **Auto-Refresh:** Run checks at a selected interval while the application is active.
+* **Troubleshooting Guide:** Review suggestions for common connection problems.
 
-## Project structure
+## 🛠️ Technologies Used
 
-```text
-NetWatch/
-├── app.py
-├── requirements.txt
-├── README.md
-└── .gitignore
+* Python
+* Streamlit
+* Pandas
+* Socket Programming
+* Git and GitHub
+* Streamlit Community Cloud
+
+## ⚙️ Run Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Sravani-0605/NetWatch.git
+cd NetWatch
 ```
 
-## Requirements
+### 2. Create a virtual environment
 
-- Python 3.10 or newer recommended
-- pip
-- Internet/network access for checking public hosts
+```bash
+python -m venv .venv
+```
 
-## Setup on Windows
+### 3. Activate the virtual environment
 
-1. Download or clone this repository.
-2. Open the project folder in VS Code.
-3. Create a virtual environment:
+**Windows PowerShell:**
 
-   ```powershell
-   python -m venv .venv
-   ```
+```powershell
+.venv\Scripts\Activate.ps1
+```
 
-4. Activate it:
+### 4. Install dependencies
 
-   ```powershell
-   .\.venv\Scripts\Activate.ps1
-   ```
+```bash
+pip install -r requirements.txt
+```
 
-   If PowerShell blocks activation, use Command Prompt instead:
+### 5. Start the application
 
-   ```bat
-   .venv\Scripts\activate.bat
-   ```
+```bash
+python -m streamlit run app.py
+```
 
-5. Install dependencies:
+The application will open in your browser.
 
-   ```powershell
-   python -m pip install -r requirements.txt
-   ```
+## 📊 How It Works
 
-6. Run the application:
+1. Enter one or more hostnames in the sidebar.
+2. Select the TCP port and connection timeout.
+3. Click **Check All Hosts** to run the connectivity tests.
+4. Review connection statuses, connection times, analytics, and charts.
+5. Download the monitoring history as a CSV report if needed.
 
-   ```powershell
-   python -m streamlit run app.py
-   ```
+## 🎯 Use Cases
 
-7. Open the local address shown in the terminal, usually `http://localhost:8501`.
+* Checking whether a TCP service is reachable.
+* Comparing TCP connection establishment times across hosts.
+* Reviewing connectivity test history.
+* Exporting results for basic network troubleshooting and analysis.
 
-## How to use
+## ⚠️ Limitations
 
-1. Enter one hostname per line in the sidebar.
-2. Choose a TCP port and timeout.
-3. Select **Check All Hosts** to run a manual check.
-4. Optionally enable automatic checks and choose an interval.
-5. Review metrics, host results, charts, and history.
-6. Use **Download CSV Report** to export the current session history.
+* The application tests TCP connectivity to the selected port; it does not measure packet loss.
+* Connection establishment time is not the same as full application response time.
+* Results depend on network conditions, DNS resolution, firewall rules, and the target service.
+* Monitoring runs when requested or according to the selected auto-refresh interval while the application is active.
+* Use the application only on systems and services you own or are authorized to test.
 
-## Important limitations
+## 👩‍💻 Author
 
-- NetWatch checks TCP connection establishment only. It does not measure packet loss, perform ICMP ping, inspect network packets, or measure the full response time of an application.
-- Checks run only when requested or when auto-refresh is enabled.
-- History is stored in Streamlit session state; it is not a permanent database and may reset when the session restarts.
-- A successful TCP connection does not guarantee that the full application is healthy.
-- Only test systems and services you own or are authorized to check.
+**Sravani Kakollu**
 
-## Future enhancements
-
-- Persistent database storage
-- Uptime and availability reports over longer periods
-- Configurable per-host ports
-- Alerting for repeated failures
-- Authentication and role-based access
-- Deployment to a hosted platform
-
-## Author
-
-Add your name, course, college, and contact links here before publishing.
+GitHub: https://github.com/Sravani-0605
