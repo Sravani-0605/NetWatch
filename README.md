@@ -92,3 +92,16 @@ The application will open in your browser.
 **Sravani Kakollu**
 
 GitHub: https://github.com/Sravani-0605
+## 📸 Project Screenshots
+
+### 1. Network Monitoring Dashboard
+
+![NetWatch Dashboard](netwatch-dashboard.png)
+
+### 2. Network Analytics
+
+![NetWatch Analytics](netwatch-analytics.png)
+
+### 3. Monitoring Results
+
+![NetWatch Monitoring Results](netwatch-monitoring.png)
